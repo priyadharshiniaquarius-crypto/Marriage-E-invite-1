@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Luxury South Indian Wedding Invitation",
+  "description": "A luxury, cinematic South Indian wedding invitation website featuring an interactive Spline 3D hero scene, elegant scroll-driven transitions, vertical timeline, music control, photo gallery, and WhatsApp RSVP integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cinzel", Georgia, serif;
+  --font-serif-display: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  
+  /* Luxury Custom Colors */
+  --color-luxury-gold-light: #F2E8D9;
+  --color-luxury-gold: #C5A059;
+  --color-luxury-gold-dark: #91753B;
+  --color-luxury-ivory: #E5D5C0;
+  --color-luxury-blush: #141311;
+  --color-luxury-burgundy: #331A1D;
+  --color-luxury-charcoal: #0A0A0A;
+  --color-luxury-border: #1A1A1A;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-luxury-charcoal);
+    color: var(--color-luxury-ivory);
+    font-family: var(--font-sans);
+  }
+
+  /* Custom scrollbar matching luxury aesthetic */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0f0f0f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-luxury-gold);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-luxury-gold-light);
+  }
+}
+
+/* Luxury animations and gradients */
+@keyframes goldShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slowPan {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes floatingParticles {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20vh) rotate(360deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-gold-shine {
+  background: linear-gradient(135deg, #F2E8D9 0%, #E5D5C0 25%, #C5A059 50%, #91753B 75%, #F2E8D9 100%);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShine 12s ease infinite;
+}
+
+.animate-gold-bg-shine {
+  background: linear-gradient(135deg, #C5A059 0%, #E5D5C0 50%, #91753B 100%);
+  background-size: 200% 200%;
+  animation: goldShine 8s ease infinite;
+}
+
+.animate-slow-pan {
+  animation: slowPan 30s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.18);
+}
+
+.glass-panel-light {
+  background: rgba(229, 213, 192, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px rgba(197, 160, 89, 0.15);
+}
+
+.glow-gold-hover:hover {
+  box-shadow: 0 0 35px rgba(197, 160, 89, 0.35);
+  border-color: rgba(197, 160, 89, 0.45);
+}
+
+/* Custom overlay for Spline to make it clickable/interactive or let click pass-through */
+.pointer-events-none-override {
+  pointer-events: none;
+}
